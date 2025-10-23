@@ -17,12 +17,14 @@
 ## 🛠️ 사용 방법
 
 ### 1. 환경 설정
+
 ```bash
 cp .env.example .env
 # .env 파일에서 본인의 GitHub 정보 입력
 ```
 
 ### 2. 로컬 실행
+
 ```bash
 # .env 파일 로드 후 실행
 export $(cat .env | xargs)
@@ -30,10 +32,12 @@ docker-compose up -d
 ```
 
 ### 3. 접속
+
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:3001/api/health
 
 ### 4. 코드 수정 후 배포
+
 ```bash
 # 코드 수정
 git add .
@@ -53,13 +57,23 @@ git push
 ## 📝 수정 예시
 
 **Frontend 메시지 변경**:
+
 ```javascript
 // frontend/src/App.js
 <h1>🚀 CI/CD Demo App v2.0</h1>
 ```
 
 **Backend 응답 변경**:
+
 ```javascript
 // backend/index.js
-message: 'Backend is running! 🎉 Updated!'
+message: "Backend is running! 🎉 Updated!";
 ```
+
+docker-compose exec database psql -U postgres -d myapp
+
+\dt
+\d users
+
+INSERT INTO users (id, name, email) VALUES (1,'john','john@mail.net');
+SELECT \* FROM users;
